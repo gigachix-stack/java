@@ -1,0 +1,1132 @@
+<!--65 Практика на поиск ошибок -->
+<p>
+1)
+let num1 = 1;
+let num2 = 2;
+console.log('сумма: ' + (num1 + num2));
+
+2)
+let a = 1;
+let b = 2;
+console.log(a + b);
+
+3)
+let num3 = "123";
+let sum = Number(num3[0]) + Number(num3[1]) + Number(num3[2]);
+console.log(sum);
+
+4)
+let num4 = 123;
+console.log(String(num4)[0]);
+
+5)
+let a1 = 0;
+console.log(++a1);
+
+6)
+let num5 = 123;
+console.log(String(num5).length);
+
+7)
+let a2 = 24 * 60 * 60;
+console.log(a2);
+
+8)
+let num6 = 123;
+let str = String(num6);
+console.log(str.length);
+
+9)
+let num7 = 123;
+let str1 = String(num7);
+console.log(str1[str1.length - 1]);
+
+10)
+let num8 = 12223;
+let str2 = String(num8);
+console.log(str2.length);
+
+11)
+let num9 = 123;
+let str3 = String(num9);
+console.log(str3[str3.length - 1]);
+
+12)
+let a = '123';
+let b = '456';
+let s = Number(a) + Number(b);
+console.log(s);
+</p>
+<!--66 Практика на операции в JavaScript -->
+<p>
+1)
+alert(24 60 60);
+2)
+alert(30 * 24 * 60 * 60);
+3)
+alert(365 * 24 * 60 * 60); 
+4)
+alert(24*60);
+5)
+alert(365* 24 * 60);
+6)
+alert(1024* 1024);
+7)
+alert(1024*1024 * 1024);
+8)
+alert(10 * 1024 * 1024* 1024);
+9)
+alert(1024* 1024 * 1024 * 1024); 
+10)
+alert(1024* 1024 * 1024);
+</p>
+
+<!--67 Практика на формулы в JavaScript-->
+<p>
+1)
+let r = 5;
+let s = Math.PI * r * r; 
+alert(s);
+
+2)
+let a = 5;
+let s1 = a * a; 
+alert(s1);
+
+3)
+let a1 = 5; 
+let b = 10;
+let s2 = a1 * b;
+alert(s2);
+
+4)
+let a2 = 5; 
+let b1 = 10;
+let p = 2 * (a2 + b1); 
+alert(p);
+
+5)
+let tc = 25;
+let tf = tc* 9/5 + 32;
+alert(tf);
+
+6)
+let tf1 = 77;
+let tc2 = (tf1 - 32)* 5 / 9;
+alert(tc2);</p>
+
+<!--79 Поиск ошибок в коде с массивами JavaScript-->
+<p>
+1)
+let arr1 = [1, 2, 3, 4, 5];
+console.log(arr1[arr1.length - 1]); 
+
+2)
+let arr2 = [1, 2, 3, 4, 5];
+console.log(arr2[0] + arr2[1] + arr2[2] + arr2[3] + arr2[4]); 
+
+3)
+let arr3 = [1, 2, 3, 4, 5];
+console.log(arr3.length); 
+
+4) 
+let arr4 = [1, 2, 3, 4, 5];
+console.log(arr4.length); 
+</p>
+
+<!--103 Поиск ошибок в коде с объектами JavaScript -->
+<p>
+1)
+let obj1 = {x: 1, y: 2, z: 3};
+console.log(obj1.x); 
+
+2) 
+let obj2 = {x: 1, y: 2, z: 3};
+let key = 'x';
+console.log(obj2[key]);   
+
+3) 
+let obj3 = {x: 1, y: 2, z: 3};
+let sum = obj3.x + obj3.y + obj3.z;
+console.log(sum);   
+
+4)
+let obj4 = {x: 1, y: 2, z: 3};
+console.log(Object.keys(obj4).length);  
+</p>
+
+<!--141 Поиск ошибок в коде с условиями JavaScript-->
+<p>
+1)
+let num1 = 1;
+let num2 = 2;
+
+if (num1 + num2 === 3) {
+	console.log('+++');
+} else {
+	console.log('---');
+}
+
+2)
+let num1_2 = '1';
+let num2_2 = '2';
+
+if (Number(num1_2) + Number(num2_2) === 3) {
+	console.log('+++');
+} else {
+	console.log('---');
+}
+
+3)
+let num1_3 = '1';
+let num2_3 = '2';
+
+if (Number(num1_3) + Number(num2_3) === 3) {
+	console.log('+++');
+} else {
+	console.log('---');
+}
+
+4)
+let num_4 = 123;
+
+if (String(num_4)[0] === '1') {
+	console.log('+++');
+} else {
+	console.log('---');
+}
+
+5)
+let num_5 = 123;
+
+if (String(num_5[0]) === '1') {
+	console.log('+++');
+} else {
+	console.log('---');
+}
+
+6)
+let num_6 = 123;
+
+if (String(num_6)[0] === '1') {
+	console.log('+++');
+} else {
+	console.log('---');
+}
+
+7)
+let num_7 = 123;
+let first_7 = String(num_7)[0];
+
+if (first_7 === '1') {
+	console.log('+++');
+} else {
+	console.log('---');
+}
+
+8)
+let num_8 = 12;
+
+if (String(num_8).length === 2) {
+	console.log('+++');
+} else {
+	console.log('---');
+}
+
+9)
+let num_9 = 12;
+let str_9 = String(num_9);
+
+if (str_9.length === 2) {
+	console.log('+++');
+} else {
+	console.log('---');
+}
+
+10)
+let num_10 = 12;
+
+if (String(num_10).length === 2) {
+	console.log('+++');
+} else {
+	console.log('---');
+}
+
+11)
+let num_11 = 12;
+
+if (String(num_11).length === 2) {
+	console.log('+++');
+} else {
+	console.log('---');
+}
+
+12)
+let num_12 = 12;
+
+if (String(num_12).length === 2) {
+	console.log('+++');
+} else {
+	console.log('---');
+}
+
+13)
+let num_13 = '123033';
+
+let sum1_13 = Number(num_13[0]) + Number(num_13[1]) + Number(num_13[2]);
+let sum2_13 = Number(num_13[3]) + Number(num_13[4]) + Number(num_13[5]);
+
+if (sum1_13 === sum2_13) {
+	console.log('суммы равны');
+} else {
+	console.log('суммы не равны');
+}
+
+</p>
+
+<!--142 Практика на условия if-else в JavaScript-->
+<p>
+
+1)
+let month = 3;
+let season;
+
+if (month === 12 || month === 1 || month === 2) {
+	season = 'зима';
+} else if (month === 3 || month === 4 || month === 5) {
+	season = 'весна';
+} else if (month === 6 || month === 7 || month === 8) {
+	season = 'лето';
+} else {
+	season = 'осень';
+}
+
+console.log(season);
+
+
+2)
+let str2 = 'abcde';
+
+if (str2[0] === 'a') {
+	console.log('+++');
+} else {
+	console.log('---');
+}
+
+
+3)
+let num3 = 12345;
+let firstDigit = String(num3)[0];
+
+if (firstDigit === '1' || firstDigit === '2' || firstDigit === '3') {
+	console.log('+++');
+} else {
+	console.log('---');
+}
+
+
+4)
+let num4 = 123;
+let str4 = String(num4);
+
+let sum4 = Number(str4[0]) + Number(str4[1]) + Number(str4[2]);
+
+console.log(sum4);
+
+
+5)
+let num5 = '123033';
+
+let sum1_5 = Number(num5[0]) + Number(num5[1]) + Number(num5[2]);
+let sum2_5 = Number(num5[3]) + Number(num5[4]) + Number(num5[5]);
+
+if (sum1_5 === sum2_5) {
+	console.log('суммы равны');
+} else {
+	console.log('суммы не равны');
+}
+</p>
+<!--168 Поиск ошибок в коде с циклами JavaScript-->
+<p>
+1)
+for (let i = 0; i <= 10; i++) {
+	console.log(i);
+}
+
+2)
+for (let i = 10; i >= 0; i--) {
+	console.log(i);
+}
+
+3)
+for (let i = 10; i >= 0; i--) {
+	console.log(i);
+}
+
+4)
+let i = 0;
+
+while (i <= 10){
+	console.log(i);
+	i++;
+}
+
+5)
+let res = 0;
+
+for (let i = 1; i <= 10; i++) {
+	res += i;
+}
+
+console.log(res);
+
+6)
+let res_6 = 1;
+
+for (let i = 1; i <= 10; i++) {
+	res_6 *= i;
+}
+
+console.log(res_6);
+
+7)
+let arr_7 = ['1', '2', '3', '4', '5'];
+let sum_7 = 0;
+
+for (let elem of arr_7) {
+	sum_7 += +elem;
+}
+
+console.log(sum_7);
+
+8)
+let arr_8 = ['1', '2', '3', '4', '5'];
+let sum_8 = 0;
+
+for (let elem of arr_8) {
+	sum_8 += +elem;
+}
+
+console.log(sum_8);
+
+9)
+let arr_9 = ['1', '2', '3', '4', '5'];
+let sum_9 = 0;
+
+for (let elem of arr_9) {
+	sum_9 += +elem;
+}
+
+console.log(sum_9);
+
+10)
+let arr_10 = ['1', '2', '3', '4', '5'];
+let sum_10 = 0;
+
+for (let i = 0; i < arr_10.length; i++) {
+	sum_10 += +arr_10[i];
+}
+
+console.log(sum_10);
+
+11)
+let arr_11 = ['1', '2', '3', '4', '5'];
+let sum_11 = 0;
+
+for (let i = 0; i < arr_11.length; i++) {
+	sum_11 += +arr_11[i];
+}
+
+console.log(sum_11);
+
+12)
+let arr_12 = ['1', '2', '3', '4', '5'];
+let sum_12 = 0;
+
+for (let i = 0; i < arr_12.length; i++) {
+	sum_12 += +arr_12[i];
+}
+
+console.log(sum_12);
+
+13)
+let arr_13 = [1, 2, 3, 4, 5];
+
+for (let i = 0; i < arr_13.length; i++) {
+	arr_13[i] = arr_13[i] ** 2;
+}
+
+console.log(arr_13);
+
+14)
+let arr_14 = [];
+
+for (let i = 1; i <= 5; i++) {
+	arr_14.push(i);
+}
+
+console.log(arr_14);
+
+15)
+let obj_15 = {a: 1, b: 2, c: 3};
+let sum_15 = 0;
+
+for (let elem in obj_15) {
+	sum_15 += obj_15[elem];
+}
+
+console.log(sum_15);
+
+16)
+let obj_16 = {a: 1, b: 2, c: 3};
+let sum_16 = 0;
+
+for (let key in obj_16) {
+	sum_16 += +obj_16[key];
+}
+
+console.log(sum_16);
+
+17)
+let arr_17 = [1, 2, 3, 4, 5];
+let res_17 = '';
+
+for (let elem of arr_17) {
+	if (elem === 3) {
+		res_17 = '+++';
+		break;
+	}
+}
+
+console.log(res_17);
+
+18)
+let arr_18 = [];
+
+for (let i = 1; i <= 5; i++) {
+	arr_18.push(i);
+}
+
+console.log(arr_18);
+
+19)
+let arr_19 = [1, 2, 3, 4, 5];
+let res_19 = false;
+
+for (let elem of arr_19) {
+	if (elem === 3) {
+		res_19 = true;
+		break;
+	}
+}
+
+console.log(res_19);
+
+20)
+let arr_20 = [1, 2, 3, 4, 5];
+
+for (let elem of arr_20) {
+	if (elem % 2 === 0) {
+		console.log(elem);
+	}
+}
+
+21)
+let arr_21 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let res_21 = [];
+
+for (let elem of arr_21) {
+	if (elem % 2 != 0) {
+		res_21.push(elem);
+	}
+}
+
+console.log(res_21);
+
+</p>
+<!--169 Отработка циклов JavaScript-->
+<p>
+1)
+for (let i = 1; i <= 100; i++) {
+	console.log(i);
+}
+
+2)
+for (let i = 100; i >= 1; i--) {
+	console.log(i);
+}
+
+3)
+for (let i = 1; i <= 100; i++) {
+	if (i % 2 === 0) {
+		console.log(i);
+	}
+}
+
+4)
+let arr4 = [];
+
+for (let i = 0; i < 10; i++) {
+	arr4.push('x');
+}
+
+console.log(arr4);
+
+5)
+let arr5 = [];
+
+for (let i = 1; i <= 10; i++) {
+	arr5.push(i);
+}
+
+console.log(arr5);
+
+6)
+let arr6 = [-5, 3, 15, 7, -2, 9, 20];
+
+for (let elem of arr6) {
+	if (elem > 0 && elem < 10) {
+		console.log(elem);
+	}
+}
+
+7)
+let arr7 = [1, 3, 5, 7, 9];
+let found7 = false;
+
+for (let elem of arr7) {
+	if (elem === 5) {
+		found7 = true;
+		break;
+	}
+}
+
+console.log(found7);
+
+8)
+let arr8 = [1, 2, 3, 4, 5];
+let sum8 = 0;
+
+for (let elem of arr8) {
+	sum8 += elem;
+}
+
+console.log(sum8);
+
+9)
+let arr9 = [1, 2, 3, 4, 5];
+let sumSq9 = 0;
+
+for (let elem of arr9) {
+	sumSq9 += elem ** 2;
+}
+
+console.log(sumSq9);
+
+10)
+let arr10 = [1, 2, 3, 4, 5];
+let sum10 = 0;
+
+for (let elem of arr10) {
+	sum10 += elem;
+}
+
+let avg10 = sum10 / arr10.length;
+
+console.log(avg10);
+
+11)
+let num11 = 5;
+let factorial11 = 1;
+
+for (let i = 1; i <= num11; i++) {
+	factorial11 *= i;
+}
+
+console.log(factorial11);
+
+12)
+let arr12 = [];
+
+for (let i = 10; i >= 1; i--) {
+	arr12.push(i);
+}
+
+console.log(arr12);
+
+13)
+let arr13 = [10, -5, 20, -3, 8, -1];
+let sum13 = 0;
+
+for (let elem of arr13) {
+	if (elem > 0) {
+		sum13 += elem;
+	}
+}
+
+console.log(sum13);
+
+14)
+let arr14 = [10, 20, 30, 50, 235, 3000];
+
+for (let elem of arr14) {
+	let first14 = String(elem)[0];
+	if (first14 === '1' || first14 === '2' || first14 === '5') {
+		console.log(elem);
+	}
+}
+
+15)
+let arr15 = [1, 2, 3, 4, 5];
+
+for (let i = arr15.length - 1; i >= 0; i--) {
+	console.log(arr15[i]);
+}
+
+16)
+let arr16 = [0, 5, 2, 3, 10];
+
+for (let i = 0; i < arr16.length; i++) {
+	if (arr16[i] === i) {
+		console.log(arr16[i]);
+	}
+}
+
+17)
+let arr17 = [1, 2, 3, 4, 5];
+
+for (let i = 0; i < arr17.length; i++) {
+	document.write(arr17[i] + '<br>');
+}
+
+18)
+let arr18 = [1, 2, 3, 4, 5];
+
+for (let i = 0; i < arr18.length; i++) {
+	document.write('<p>' + arr18[i] + '</p>');
+}
+
+19)
+let days19 = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+
+for (let i = 0; i < days19.length; i++) {
+	if (days19[i] === 'Суббота' || days19[i] === 'Воскресенье') {
+		document.write('<b>' + days19[i] + '</b><br>');
+	} else {
+		document.write(days19[i] + '<br>');
+	}
+}
+
+20)
+let days20 = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+let day = 3;
+
+for (let i = 0; i < days20.length; i++) {
+	if (i === day - 1) {
+		document.write('<i>' + days20[i] + '</i><br>');
+	} else {
+		document.write(days20[i] + '<br>');
+	}
+}
+
+21)
+let obj21 = {
+	employee1: 100,
+	employee2: 200,
+	employee3: 300,
+	employee4: 400,
+	employee5: 500,
+	employee6: 600,
+	employee7: 700,
+};
+
+for (let key in obj21) {
+	obj21[key] = obj21[key] * 1.1;
+}
+
+console.log(obj21);
+
+22)
+let obj22 = {
+	employee1: 100,
+	employee2: 200,
+	employee3: 300,
+	employee4: 400,
+	employee5: 500,
+	employee6: 600,
+	employee7: 700,
+};
+
+for (let key in obj22) {
+	if (obj22[key] <= 400) {
+		obj22[key] = obj22[key] * 1.1;
+	}
+}
+
+console.log(obj22);
+
+23)
+let arr1_23 = [1, 2, 3, 4, 5];
+let arr2_23 = [6, 7, 8, 9, 10];
+let obj23 = {};
+
+for (let i = 0; i < arr1_23.length; i++) {
+	obj23[arr1_23[i]] = arr2_23[i];
+}
+
+console.log(obj23);
+
+24)
+let obj24 = {1: 6, 2: 7, 3: 8, 4: 9, 5: 10};
+let sumKeys24 = 0;
+let sumValues24 = 0;
+
+for (let key in obj24) {
+	sumKeys24 += Number(key);
+	sumValues24 += obj24[key];
+}
+
+console.log(sumKeys24 / sumValues24);
+
+25)
+let obj25 = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5};
+let keys25 = [];
+let values25 = [];
+
+for (let key in obj25) {
+	keys25.push(key);
+	values25.push(obj25[key]);
+}
+
+console.log(keys25);
+console.log(values25);
+
+26)
+let obj26 = {
+	1: 125,
+	2: 225,
+	3: 128,
+	4: 356,
+	5: 145,
+	6: 281,
+	7: 452,
+};
+let res26 = [];
+
+for (let key in obj26) {
+	let first26 = String(obj26[key])[0];
+	if (first26 === '1' || first26 === '2') {
+		res26.push(obj26[key]);
+	}
+}
+
+console.log(res26);
+
+27)
+let arr27 = ['a', 'b', 'c', 'd', 'e'];
+let obj27 = {};
+
+for (let i = 0; i < arr27.length; i++) {
+	obj27[i + 1] = arr27[i];
+}
+
+console.log(obj27);
+
+28)
+let arr28 = ['a', 'b', 'c', 'd', 'e'];
+let obj28 = {};
+
+for (let i = 0; i < arr28.length; i++) {
+	obj28[arr28[i]] = i + 1;
+}
+
+console.log(obj28);
+</p>
+
+<!--201 Поиск ошибок в коде со стандартными методами JavaScript-->
+<p>
+1)
+let num1 = 12345;
+let arr1 = String(num1).split('');
+
+let sum1 = 0;
+for (let digit of arr1) {
+	sum1 += Number(digit);
+}
+
+console.log(sum1);
+
+2)
+let num2 = 12345;
+let arr2 = String(num2).split('');
+
+let sum2 = 0;
+for (let digit of arr2) {
+	sum2 += Number(digit);
+}
+
+console.log(sum2);
+
+3)
+let num3 = 12345;
+let arr3 = String(num3).split('');
+
+let sum3 = 0;
+for (let digit of arr3) {
+	sum3 += Number(digit);
+}
+
+console.log(sum3);
+
+4)
+let num4 = 12345;
+let arr4 = String(num4).split('');
+
+let sum4 = 0;
+for (let digit of arr4) {
+	sum4 += Number(digit);
+}
+
+console.log(sum4);
+
+5)
+let num5 = 12345;
+let arr5 = String(num5).split('');
+
+let prod5 = 1;
+for (let digit of arr5) {
+	prod5 *= Number(digit);
+}
+
+console.log(prod5);
+</p>
+<!--216 Поиск ошибок в коде с функциями JavaScript-->
+<p>
+	1)
+function func1_1() {
+	return 3;
+}
+function func2_1() {
+	return 5;
+}
+
+console.log( func1_1() + func2_1() );
+
+2)
+function sum2(arr) {
+	let res = 0;
+	
+	for (let elem of arr) {
+		res += elem;
+	}
+	
+	return res;
+}
+
+console.log(sum2([1, 2, 3, 4, 5]));
+
+3)
+let arr3 = [1, 2, 3, 4, 5];
+
+function func3(arr) {
+	let res = 0;
+	
+	for (let elem of arr) {
+		res += elem;
+	}
+	
+	console.log(res);
+}
+
+func3(arr3);
+
+4)
+function func1_4() {
+	return 3;
+}
+function func2_4() {
+	return 5;
+}
+
+console.log( func1_4() + func2_4() );
+
+5)
+function sum5(arr) {
+	let sum = 0;
+	
+	for (let elem of arr) {
+		sum += elem;
+	}
+	
+	return sum;
+}
+
+let res5 = sum5([1, 2, 3, 4, 5]);
+console.log(res5);
+
+6)
+function sum6(arr) {
+	let sum = 0;
+	
+	for (let elem of arr) {
+		sum += elem;
+	}
+	
+	return sum;
+}
+
+let res6 = sum6([1, 2, 3, 4, 5]);
+console.log(res6);
+
+7)
+function add7(num) {
+	if (num <= 9) {
+		return '0' + num;
+	}
+	return num;
+}
+
+8)
+let arr8 = [1, 2, 3, 4, 5];
+
+function sum8(arr) {
+	let res = 0;
+	
+	for (let elem of arr) {
+		res += elem;
+	}
+	
+	return res;
+}
+
+let result8 = sum8(arr8);
+console.log(result8);
+
+9)
+let num9 = 12345;
+
+function getDigitsSum9(num) {
+	let arr = String(num).split('');
+	let sum = 0;
+	
+	for (let elem of arr) {
+		sum += Number(elem);
+	}
+	
+	return sum;
+}
+
+let res9 = getDigitsSum9(num9);
+console.log(res9);
+
+10)
+function isPrime10(num) {
+	for (let i = 2; i < num; i++) {
+		if (num % i === 0) {
+			return false;
+		}
+	}
+	return true;
+}
+
+console.log(isPrime10(13));
+</p>
+
+<!--217 Практика на функции JavaScript-->
+<p>
+	// №1)
+function getDivisors1(num) {
+	let res = [];
+	
+	for (let i = 1; i <= num; i++) {
+		if (num % i === 0) {
+			res.push(i);
+		}
+	}
+	
+	return res;
+}
+
+console.log(getDivisors1(12));
+
+// №2)
+function getCommonDivisors2(num1, num2) {
+	let res = [];
+	let min = Math.min(num1, num2);
+	
+	for (let i = 1; i <= min; i++) {
+		if (num1 % i === 0 && num2 % i === 0) {
+			res.push(i);
+		}
+	}
+	
+	return res;
+}
+
+console.log(getCommonDivisors2(12, 18));
+
+// №3)
+function getDigitsSum3(num) {
+	let arr = String(num).split('');
+	let sum = 0;
+	
+	for (let digit of arr) {
+		sum += Number(digit);
+	}
+	
+	return sum;
+}
+
+console.log(getDigitsSum3(12345));
+
+// №4)
+function getCurrentWeekday4() {
+	let days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+	let today = new Date();
+	
+	return days[today.getDay()];
+}
+
+console.log(getCurrentWeekday4());
+
+// №5)
+function getWeekdayByDate5(date) {
+	let days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+	
+	return days[date.getDay()];
+}
+
+console.log(getWeekdayByDate5(new Date(2024, 0, 1)));
+
+// №6)
+function getDaysFromSeconds6(seconds) {
+	return Math.floor(seconds / (24 * 60 * 60));
+}
+
+console.log(getDaysFromSeconds6(200000));
+
+// №7)
+function isLeapYear7(year) {
+	return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+}
+
+console.log(isLeapYear7(2024));
+
+// №8)
+function isPrime8(num) {
+	if (num < 2) {
+		return false;
+	}
+	
+	for (let i = 2; i < num; i++) {
+		if (num % i === 0) {
+			return false;
+		}
+	}
+	
+	return true;
+}
+
+console.log(isPrime8(13));
+</p>
+
