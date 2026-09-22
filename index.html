@@ -1034,7 +1034,7 @@ console.log(isPrime10(13));
 
 <!--217 Практика на функции JavaScript-->
 <p>
-	// №1)
+	1))
 function getDivisors1(num) {
 	let res = [];
 	
@@ -1049,7 +1049,7 @@ function getDivisors1(num) {
 
 console.log(getDivisors1(12));
 
-// №2)
+2))
 function getCommonDivisors2(num1, num2) {
 	let res = [];
 	let min = Math.min(num1, num2);
@@ -1065,7 +1065,7 @@ function getCommonDivisors2(num1, num2) {
 
 console.log(getCommonDivisors2(12, 18));
 
-// №3)
+3))
 function getDigitsSum3(num) {
 	let arr = String(num).split('');
 	let sum = 0;
@@ -1079,7 +1079,7 @@ function getDigitsSum3(num) {
 
 console.log(getDigitsSum3(12345));
 
-// №4)
+4))
 function getCurrentWeekday4() {
 	let days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
 	let today = new Date();
@@ -1089,7 +1089,7 @@ function getCurrentWeekday4() {
 
 console.log(getCurrentWeekday4());
 
-// №5)
+5))
 function getWeekdayByDate5(date) {
 	let days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
 	
@@ -1098,21 +1098,21 @@ function getWeekdayByDate5(date) {
 
 console.log(getWeekdayByDate5(new Date(2024, 0, 1)));
 
-// №6)
+6))
 function getDaysFromSeconds6(seconds) {
 	return Math.floor(seconds / (24 * 60 * 60));
 }
 
 console.log(getDaysFromSeconds6(200000));
 
-// №7)
+7))
 function isLeapYear7(year) {
 	return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 }
 
 console.log(isLeapYear7(2024));
 
-// №8)
+8))
 function isPrime8(num) {
 	if (num < 2) {
 		return false;
@@ -1130,3 +1130,72 @@ function isPrime8(num) {
 console.log(isPrime8(13));
 </p>
 
+<!--222 Глобальные переменные и параметры функций в JavaScript-->
+<p>
+1)
+function func(localNum) {
+	console.log(localNum);
+}
+
+func(1);
+
+
+2)
+function func2(localNum) {
+	console.log(localNum);
+}
+
+let num2 = 1;
+func2(num2);
+
+
+3)
+function func3(localNum) {
+	console.log(localNum);
+}
+
+let num3 = 1;
+func3(num3);
+num3 = 2;
+
+
+4)
+let num4 = 1;
+
+function func4(localNum) {
+	console.log(localNum);
+}
+
+num4 = 2;
+func4(num4);
+
+
+5)
+function func5(localNum) {
+	localNum = 2;
+}
+
+let num5 = 1;
+func5(num5);
+console.log(num5);
+
+
+6)
+function func6(localNum) {
+	num6 = 2;
+}
+
+let num6 = 1;
+func6(num6);
+console.log(num6);
+
+
+7)
+function func7(localNum) {
+	let num7 = 2;
+}
+
+let num7 = 1;
+func7(num7);
+console.log(num7);
+</p>
