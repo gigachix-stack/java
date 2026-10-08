@@ -404,6 +404,366 @@ console.log("=== Задание 25 ===");
     console.log("Новый баланс: " + balance + " ₸"); // 75000
   }
 }
+// ==================== ЗАДАНИЯ 29–45 ====================
+
+// ---------- Задание 29. Определение времени суток ----------
+console.log("=== Задание 29 ===");
+{
+  function dayPart(hour) {
+    if (hour < 0 || hour > 23) {
+      return "Ошибка: час должен быть от 0 до 23";
+    } else if (hour >= 6 && hour <= 11) {
+      return "Утро";
+    } else if (hour >= 12 && hour <= 17) {
+      return "День";
+    } else if (hour >= 18 && hour <= 21) {
+      return "Вечер";
+    } else {
+      return "Ночь";
+    }
+  }
+
+  let hour = 14;
+  console.log("Час " + hour + ": " + dayPart(hour));
+
+  // Дополнительная проверка границ и ошибки
+  for (let h of [0, 5, 6, 11, 12, 17, 18, 21, 22, 23, 24, -1]) {
+    console.log("Час " + h + ": " + dayPart(h));
+  }
+}
+
+// ---------- Задание 30. Проверка результатов экзамена ----------
+console.log("=== Задание 30 ===");
+{
+  function checkExam(math, programming) {
+    if (math >= 50 && programming >= 50) {
+      return "Экзамены сданы";
+    } else {
+      return "Необходимо пересдать";
+    }
+  }
+
+  let math = 75;
+  let programming = 48;
+  console.log("Математика " + math + ", программирование " + programming + ": " + checkExam(math, programming));
+
+  // Проверка значений 80 и 90
+  console.log("Математика 80, программирование 90: " + checkExam(80, 90));
+}
+
+// ---------- Задание 31. Определение високосного года ----------
+console.log("=== Задание 31 ===");
+{
+  let year = 2028;
+
+  if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
+    console.log(year + " — високосный год");
+  } else {
+    console.log(year + " — не високосный год");
+  }
+}
+
+// ---------- Задание 32. Сумма нечётных чисел ----------
+console.log("=== Задание 32 ===");
+{
+  let sum = 0;
+  for (let i = 1; i <= 50; i++) {
+    if (i % 2 !== 0) {
+      sum += i;
+    }
+  }
+  console.log("Сумма нечётных чисел от 1 до 50: " + sum); // 625
+}
+
+// ---------- Задание 33. Подсчёт цифр числа ----------
+console.log("=== Задание 33 ===");
+{
+  let number = 45678;
+  let digits = String(number).length;
+  console.log("Количество цифр в числе " + number + ": " + digits); // 5
+}
+
+// ---------- Задание 34. Переворот строки ----------
+console.log("=== Задание 34 ===");
+{
+  let word = "JavaScript";
+  let reversed = "";
+
+  for (let i = word.length - 1; i >= 0; i--) {
+    reversed += word[i];
+  }
+  console.log(reversed); // tpircSavaJ
+}
+
+// ---------- Задание 35. Количество положительных чисел ----------
+console.log("=== Задание 35 ===");
+{
+  let numbers = [-5, 10, 0, 23, -8, 15, -2];
+  let count = 0;
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > 0) {
+      count++;
+    }
+  }
+  console.log("Количество положительных чисел: " + count); // 3
+}
+
+// ---------- Задание 36. Удаление повторяющихся элементов ----------
+console.log("=== Задание 36 ===");
+{
+  let numbers = [2, 3, 2, 5, 3, 7, 5, 9];
+  let unique = [];
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (!unique.includes(numbers[i])) {
+      unique.push(numbers[i]);
+    }
+  }
+  console.log(unique); // [2, 3, 5, 7, 9]
+}
+
+// ==================== УРОВЕНЬ C — Функции ====================
+
+// ---------- Задание 37. Конвертер температуры ----------
+console.log("=== Задание 37 ===");
+{
+  function convertTemperature(celsius) {
+    return celsius * 1.8 + 32;
+  }
+
+  for (let c of [0, 20, 100]) {
+    console.log(c + "°C = " + convertTemperature(c) + "°F");
+  }
+}
+
+// ---------- Задание 38. Проверка простого числа ----------
+console.log("=== Задание 38 ===");
+{
+  function isPrime(number) {
+    if (number <= 1) {
+      return false;
+    }
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+      if (number % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  for (let n of [7, 12, 17, 21]) {
+    console.log(n + ": " + isPrime(n));
+  }
+}
+
+// ---------- Задание 39. Подсчёт гласных букв ----------
+console.log("=== Задание 39 ===");
+{
+  function countVowels(text) {
+    let vowels = "aeiou";
+    let lower = text.toLowerCase();
+    let count = 0;
+
+    for (let i = 0; i < lower.length; i++) {
+      if (vowels.includes(lower[i])) {
+        count++;
+      }
+    }
+    return count;
+  }
+
+  console.log("Гласных в слове \"education\": " + countVowels("education")); // 5
+}
+
+// ---------- Задание 40. Расчёт стоимости доставки ----------
+console.log("=== Задание 40 ===");
+{
+  function calculateDelivery(amount) {
+    if (amount < 5000) {
+      return 1500;
+    } else if (amount < 15000) {
+      return 800;
+    } else {
+      return 0;
+    }
+  }
+
+  for (let amount of [3000, 10000, 20000]) {
+    let delivery = calculateDelivery(amount);
+    let total = amount + delivery;
+    console.log("Заказ: " + amount + " ₸, доставка: " + delivery + " ₸, итого: " + total + " ₸");
+  }
+}
+
+// ==================== УРОВЕНЬ D — Реальные мини-проекты ====================
+
+// ---------- Задание 41. Электронный журнал колледжа ----------
+console.log("=== Задание 41 ===");
+{
+  let students = [
+    {name: "Алия", score: 95},
+    {name: "Арман", score: 67},
+    {name: "Данияр", score: 82},
+    {name: "Мадина", score: 45}
+  ];
+
+  // 1. Имя и балл каждого студента
+  for (let i = 0; i < students.length; i++) {
+    console.log(students[i].name + ": " + students[i].score);
+  }
+
+  // 2. Студенты с баллами 50 и выше
+  console.log("Студенты с баллом 50 и выше:");
+  for (let i = 0; i < students.length; i++) {
+    if (students[i].score >= 50) {
+      console.log(students[i].name);
+    }
+  }
+
+  // 3. Студент с наивысшим баллом
+  let best = students[0];
+  for (let i = 1; i < students.length; i++) {
+    if (students[i].score > best.score) {
+      best = students[i];
+    }
+  }
+  console.log("Наивысший балл: " + best.name + " (" + best.score + ")");
+
+  // 4. Средний балл группы
+  let total = 0;
+  for (let i = 0; i < students.length; i++) {
+    total += students[i].score;
+  }
+  console.log("Средний балл группы: " + total / students.length);
+
+  // 5. Количество не сдавших экзамен (балл ниже 50)
+  let failed = 0;
+  for (let i = 0; i < students.length; i++) {
+    if (students[i].score < 50) {
+      failed++;
+    }
+  }
+  console.log("Не сдали экзамен: " + failed);
+}
+
+// ---------- Задание 42. Система бронирования мест ----------
+console.log("=== Задание 42 ===");
+{
+  let seats = [false, true, false, false, true];
+  let selectedSeat = 3;
+
+  // true — место занято, false — свободно; нумерация с 1
+  if (!Number.isInteger(selectedSeat) || selectedSeat < 1 || selectedSeat > seats.length) {
+    console.log("Ошибка: неверный номер места");
+  } else if (seats[selectedSeat - 1] === false) {
+    seats[selectedSeat - 1] = true;
+    console.log("Место №" + selectedSeat + " успешно забронировано");
+  } else {
+    console.log("Место №" + selectedSeat + " уже занято");
+  }
+  console.log(seats);
+}
+
+// ---------- Задание 43. Учёт товаров на складе ----------
+console.log("=== Задание 43 ===");
+{
+  let products = [
+    {name: "Ноутбук", quantity: 5},
+    {name: "Мышь", quantity: 15},
+    {name: "Клавиатура", quantity: 3},
+    {name: "Монитор", quantity: 8}
+  ];
+
+  // 1. Список всех товаров
+  console.log("Список товаров:");
+  for (let i = 0; i < products.length; i++) {
+    console.log(products[i].name + ": " + products[i].quantity + " шт.");
+  }
+
+  // 2. Товары, количество которых меньше 5
+  console.log("Товары, которых меньше 5:");
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].quantity < 5) {
+      console.log(products[i].name + ": " + products[i].quantity + " шт.");
+    }
+  }
+
+  // 3. Общее количество единиц
+  let totalQuantity = 0;
+  for (let i = 0; i < products.length; i++) {
+    totalQuantity += products[i].quantity;
+  }
+  console.log("Всего единиц товаров: " + totalQuantity);
+
+  // 4. Товар с максимальным количеством
+  let maxProduct = products[0];
+  for (let i = 1; i < products.length; i++) {
+    if (products[i].quantity > maxProduct.quantity) {
+      maxProduct = products[i];
+    }
+  }
+  console.log("Больше всего: " + maxProduct.name + " (" + maxProduct.quantity + " шт.)");
+
+  // 5. Добавление нового товара
+  products.push({name: "Принтер", quantity: 4});
+  console.log("Список после добавления товара:");
+  for (let i = 0; i < products.length; i++) {
+    console.log(products[i].name + ": " + products[i].quantity + " шт.");
+  }
+}
+
+// ---------- Задание 44. Учёт расходов ----------
+console.log("=== Задание 44 ===");
+{
+  let expenses = [2500, 1800, 4200, 1500, 3100, 2600, 5000];
+
+  let totalExpenses = 0;
+  let maxExpense = expenses[0];
+  let minExpense = expenses[0];
+  let daysOver = 0;
+
+  for (let i = 0; i < expenses.length; i++) {
+    totalExpenses += expenses[i];
+    if (expenses[i] > maxExpense) {
+      maxExpense = expenses[i];
+    }
+    if (expenses[i] < minExpense) {
+      minExpense = expenses[i];
+    }
+    if (expenses[i] > 3000) {
+      daysOver++;
+    }
+  }
+
+  console.log("Общая сумма расходов: " + totalExpenses + " ₸");
+  console.log("Максимальный расход: " + maxExpense + " ₸");
+  console.log("Минимальный расход: " + minExpense + " ₸");
+  console.log("Средний расход за день: " + (totalExpenses / expenses.length).toFixed(2) + " ₸");
+  console.log("Дней с расходами выше 3000 ₸: " + daysOver);
+}
+
+// ---------- Задание 45. Система регистрации участников ----------
+console.log("=== Задание 45 ===");
+{
+  let participants = [
+    {name: "Али", age: 17, registered: true},
+    {name: "Аружан", age: 16, registered: false},
+    {name: "Руслан", age: 19, registered: true}
+  ];
+
+  let admitted = 0;
+  console.log("Допущенные участники:");
+  for (let i = 0; i < participants.length; i++) {
+    let p = participants[i];
+    if (p.registered && p.age >= 16 && p.age <= 25) {
+      console.log(p.name);
+      admitted++;
+    }
+  }
+  console.log("Всего допущено: " + admitted);
+}
+
 
 // ==================== ДОПОЛНИТЕЛЬНОЕ ЗАДАНИЕ ====================
 // Запускать в браузере через index.html (используются prompt() и alert())
