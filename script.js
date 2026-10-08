@@ -752,18 +752,33 @@ console.log("=== Задание 45 ===");
     {name: "Руслан", age: 19, registered: true}
   ];
 
-  let admitted = 0;
-  console.log("Допущенные участники:");
-  for (let i = 0; i < participants.length; i++) {
-    let p = participants[i];
-    if (p.registered && p.age >= 16 && p.age <= 25) {
-      console.log(p.name);
-      admitted++;
+  // Условие допуска: зарегистрирован и возраст от 16 до 25 включительно
+  function showAdmitted(list) {
+    let admitted = 0;
+    console.log("Допущенные участники:");
+    for (let i = 0; i < list.length; i++) {
+      let p = list[i];
+      if (p.registered && p.age >= 16 && p.age <= 25) {
+        console.log(p.name);
+        admitted++;
+      }
     }
+    console.log("Всего допущено: " + admitted);
   }
-  console.log("Всего допущено: " + admitted);
-}
 
+  // Исходные данные
+  showAdmitted(participants);
+
+  // Проверка на других значениях
+  console.log("--- Проверка на других значениях ---");
+  showAdmitted([
+    {name: "Тимур", age: 15, registered: true},    // слишком молод
+    {name: "Сабина", age: 16, registered: true},   // нижняя граница
+    {name: "Нурлан", age: 25, registered: true},   // верхняя граница
+    {name: "Айдос", age: 26, registered: true},    // слишком взрослый
+    {name: "Дана", age: 20, registered: false}     // не зарегистрирован
+  ]);
+}
 
 // ==================== ДОПОЛНИТЕЛЬНОЕ ЗАДАНИЕ ====================
 // Запускать в браузере через index.html (используются prompt() и alert())
