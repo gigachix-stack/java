@@ -404,382 +404,445 @@ console.log("=== Задание 25 ===");
     console.log("Новый баланс: " + balance + " ₸"); // 75000
   }
 }
-// ==================== ЗАДАНИЯ 29–45 ====================
 
-// ---------- Задание 29. Определение времени суток ----------
-console.log("=== Задание 29 ===");
+// ===== Уровень A — Условные операторы =====
+
+// Задание 46. Проверка возраста для регистрации
+console.log("--- Задание 46 ---");
 {
-  function dayPart(hour) {
-    if (hour < 0 || hour > 23) {
-      return "Ошибка: час должен быть от 0 до 23";
-    } else if (hour >= 6 && hour <= 11) {
-      return "Утро";
-    } else if (hour >= 12 && hour <= 17) {
-      return "День";
-    } else if (hour >= 18 && hour <= 21) {
-      return "Вечер";
+  function checkRegistration(age) {
+    if (age >= 16) {
+      return "Регистрация разрешена";
     } else {
-      return "Ночь";
+      return "Регистрация недоступна";
     }
   }
-
-  let hour = 14;
-  console.log("Час " + hour + ": " + dayPart(hour));
-
-  // Дополнительная проверка границ и ошибки
-  for (let h of [0, 5, 6, 11, 12, 17, 18, 21, 22, 23, 24, -1]) {
-    console.log("Час " + h + ": " + dayPart(h));
-  }
+  let age = 15;
+  console.log(age + ": " + checkRegistration(age)); // Регистрация недоступна
+  console.log(16 + ": " + checkRegistration(16));   // Регистрация разрешена
+  console.log(20 + ": " + checkRegistration(20));   // Регистрация разрешена
 }
 
-// ---------- Задание 30. Проверка результатов экзамена ----------
-console.log("=== Задание 30 ===");
+// Задание 47. Определение скидки для студентов
+console.log("--- Задание 47 ---");
 {
-  function checkExam(math, programming) {
-    if (math >= 50 && programming >= 50) {
-      return "Экзамены сданы";
+  function priceWithDiscount(price, isStudent) {
+    console.log("Первоначальная цена: " + price + " ₸");
+    if (isStudent) {
+      let discount = price * 10 / 100;
+      let finalPrice = price - discount;
+      console.log("Скидка студента 10%: " + discount + " ₸");
+      console.log("Итоговая цена: " + finalPrice + " ₸");
     } else {
-      return "Необходимо пересдать";
+      console.log("Итоговая цена: " + price + " ₸ (скидки нет)");
     }
   }
-
-  let math = 75;
-  let programming = 48;
-  console.log("Математика " + math + ", программирование " + programming + ": " + checkExam(math, programming));
-
-  // Проверка значений 80 и 90
-  console.log("Математика 80, программирование 90: " + checkExam(80, 90));
+  let price = 12000;
+  priceWithDiscount(price, true);  // итого 10800 ₸
+  priceWithDiscount(price, false); // итого 12000 ₸
 }
 
-// ---------- Задание 31. Определение високосного года ----------
-console.log("=== Задание 31 ===");
+// Задание 48. Проверка треугольника
+console.log("--- Задание 48 ---");
 {
-  let year = 2028;
-
-  if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
-    console.log(year + " — високосный год");
-  } else {
-    console.log(year + " — не високосный год");
-  }
-}
-
-// ---------- Задание 32. Сумма нечётных чисел ----------
-console.log("=== Задание 32 ===");
-{
-  let sum = 0;
-  for (let i = 1; i <= 50; i++) {
-    if (i % 2 !== 0) {
-      sum += i;
+  function triangleExists(a, b, c) {
+    if (a > 0 && b > 0 && c > 0 && a + b > c && a + c > b && b + c > a) {
+      return "Треугольник существует";
+    } else {
+      return "Треугольник не существует";
     }
   }
-  console.log("Сумма нечётных чисел от 1 до 50: " + sum); // 625
+  console.log("5, 7, 10: " + triangleExists(5, 7, 10)); // существует
+  console.log("1, 2, 10: " + triangleExists(1, 2, 10)); // не существует
+  console.log("0, 4, 5: " + triangleExists(0, 4, 5));   // не существует
 }
 
-// ---------- Задание 33. Подсчёт цифр числа ----------
-console.log("=== Задание 33 ===");
+// Задание 49. Определение категории пользователя
+console.log("--- Задание 49 ---");
 {
-  let number = 45678;
-  let digits = String(number).length;
-  console.log("Количество цифр в числе " + number + ": " + digits); // 5
-}
-
-// ---------- Задание 34. Переворот строки ----------
-console.log("=== Задание 34 ===");
-{
-  let word = "JavaScript";
-  let reversed = "";
-
-  for (let i = word.length - 1; i >= 0; i--) {
-    reversed += word[i];
+  function accessByRole(role) {
+    let message;
+    switch (role) {
+      case "admin":
+        message = "Полный доступ";
+        break;
+      case "teacher":
+        message = "Доступ преподавателя";
+        break;
+      case "student":
+        message = "Доступ студента";
+        break;
+      default:
+        message = "Доступ запрещён";
+    }
+    return message;
   }
-  console.log(reversed); // tpircSavaJ
+  let role = "teacher";
+  console.log(role + ": " + accessByRole(role)); // Доступ преподавателя
+  ["admin", "student", "guest"].forEach(function (r) {
+    console.log(r + ": " + accessByRole(r));
+  });
 }
 
-// ---------- Задание 35. Количество положительных чисел ----------
-console.log("=== Задание 35 ===");
+// Задание 50. Контроль заряда батареи
+console.log("--- Задание 50 ---");
 {
-  let numbers = [-5, 10, 0, 23, -8, 15, -2];
-  let count = 0;
+  function batteryStatus(battery) {
+    if (battery < 0 || battery > 100) {
+      return "Ошибка: заряд должен быть от 0 до 100";
+    } else if (battery <= 15) {
+      return "Срочно подключите зарядку";
+    } else if (battery <= 30) {
+      return "Низкий заряд";
+    } else if (battery <= 80) {
+      return "Нормальный заряд";
+    } else {
+      return "Высокий заряд";
+    }
+  }
+  let battery = 25;
+  console.log(battery + "%: " + batteryStatus(battery)); // Низкий заряд
+  [10, 65, 95, 110].forEach(function (b) {
+    console.log(b + "%: " + batteryStatus(b));
+  });
+}
 
+// ===== Уровень B — Циклы и массивы =====
+
+// Задание 51. Числа, кратные пяти
+console.log("--- Задание 51 ---");
+{
+  let found = [];
+  for (let i = 1; i <= 100; i++) {
+    if (i % 5 === 0) {
+      found.push(i);
+    }
+  }
+  console.log("Числа, кратные 5: " + found.join(", "));
+  console.log("Количество: " + found.length); // 20
+}
+
+// Задание 52. Факториал числа
+console.log("--- Задание 52 ---");
+{
+  let n = 6;
+  let factorial = 1;
+  for (let i = 1; i <= n; i++) {
+    factorial *= i;
+  }
+  console.log(n + "! = " + factorial); // 720
+}
+
+// Задание 53. Поиск отрицательных чисел
+console.log("--- Задание 53 ---");
+{
+  let numbers = [12, -5, 8, -9, 15, -2, 0, 21];
+  let negativeNumbers = [];
   for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > 0) {
-      count++;
+    if (numbers[i] < 0) {
+      negativeNumbers.push(numbers[i]);
     }
   }
-  console.log("Количество положительных чисел: " + count); // 3
+  console.log("Отрицательные числа: " + negativeNumbers.join(", ")); // -5, -9, -2
+  console.log("Количество: " + negativeNumbers.length);              // 3
 }
 
-// ---------- Задание 36. Удаление повторяющихся элементов ----------
-console.log("=== Задание 36 ===");
+// Задание 54. Поиск студента в списке
+console.log("--- Задание 54 ---");
 {
-  let numbers = [2, 3, 2, 5, 3, 7, 5, 9];
-  let unique = [];
-
-  for (let i = 0; i < numbers.length; i++) {
-    if (!unique.includes(numbers[i])) {
-      unique.push(numbers[i]);
-    }
+  let students = ["Алия", "Руслан", "Мадина", "Арман", "Данияр"];
+  function findStudent(name) {
+    return students.includes(name) ? "Студент найден" : "Студент не найден";
   }
-  console.log(unique); // [2, 3, 5, 7, 9]
+  let searchName = "Мадина";
+  console.log(searchName + ": " + findStudent(searchName)); // найден
+  console.log("Айдос: " + findStudent("Айдос"));           // не найден
 }
 
-// ==================== УРОВЕНЬ C — Функции ====================
-
-// ---------- Задание 37. Конвертер температуры ----------
-console.log("=== Задание 37 ===");
+// Задание 55. Сортировка результатов тестирования
+console.log("--- Задание 55 ---");
 {
-  function convertTemperature(celsius) {
-    return celsius * 1.8 + 32;
-  }
-
-  for (let c of [0, 20, 100]) {
-    console.log(c + "°C = " + convertTemperature(c) + "°F");
-  }
+  let scores = [75, 92, 48, 85, 67, 100, 58];
+  let ascending = scores.slice().sort((a, b) => a - b);
+  console.log("По возрастанию: " + ascending.join(", ")); // 48, 58, 67, 75, 85, 92, 100
+  console.log("Минимальный балл: " + ascending[0]);                      // 48
+  console.log("Максимальный балл: " + ascending[ascending.length - 1]);  // 100
+  let descending = scores.slice().sort((a, b) => b - a);
+  console.log("По убыванию: " + descending.join(", "));   // 100, 92, 85, 75, 67, 58, 48
 }
 
-// ---------- Задание 38. Проверка простого числа ----------
-console.log("=== Задание 38 ===");
-{
-  function isPrime(number) {
-    if (number <= 1) {
-      return false;
-    }
-    for (let i = 2; i <= Math.sqrt(number); i++) {
-      if (number % i === 0) {
-        return false;
-      }
-    }
-    return true;
-  }
+// ===== Уровень C — Функции и обработка данных =====
 
-  for (let n of [7, 12, 17, 21]) {
-    console.log(n + ": " + isPrime(n));
+// Задание 56. Калькулятор площади
+console.log("--- Задание 56 ---");
+{
+  function calculateArea(width, height) {
+    return width * height;
   }
+  console.log("5 x 8 = " + calculateArea(5, 8));   // 40
+  console.log("3 x 4 = " + calculateArea(3, 4));   // 12
+  console.log("10 x 2.5 = " + calculateArea(10, 2.5)); // 25
 }
 
-// ---------- Задание 39. Подсчёт гласных букв ----------
-console.log("=== Задание 39 ===");
+// Задание 57. Проверка палиндрома
+console.log("--- Задание 57 ---");
 {
-  function countVowels(text) {
-    let vowels = "aeiou";
-    let lower = text.toLowerCase();
-    let count = 0;
-
-    for (let i = 0; i < lower.length; i++) {
-      if (vowels.includes(lower[i])) {
-        count++;
-      }
-    }
-    return count;
+  function isPalindrome(word) {
+    let lower = word.toLowerCase();
+    let reversed = lower.split("").reverse().join("");
+    return lower === reversed;
   }
-
-  console.log("Гласных в слове \"education\": " + countVowels("education")); // 5
+  ["level", "radar", "hello"].forEach(function (w) {
+    console.log(w + (isPalindrome(w) ? " — палиндром" : " — не палиндром"));
+  });
 }
 
-// ---------- Задание 40. Расчёт стоимости доставки ----------
-console.log("=== Задание 40 ===");
+// Задание 58. Подсчёт слов в предложении
+console.log("--- Задание 58 ---");
 {
-  function calculateDelivery(amount) {
-    if (amount < 5000) {
-      return 1500;
-    } else if (amount < 15000) {
-      return 800;
-    } else {
+  function countWords(text) {
+    let trimmed = text.trim();
+    if (trimmed === "") {
       return 0;
     }
+    return trimmed.split(/\s+/).length;
   }
-
-  for (let amount of [3000, 10000, 20000]) {
-    let delivery = calculateDelivery(amount);
-    let total = amount + delivery;
-    console.log("Заказ: " + amount + " ₸, доставка: " + delivery + " ₸, итого: " + total + " ₸");
-  }
+  let text = "JavaScript is a popular programming language";
+  console.log("Слов в тексте: " + countWords(text));       // 6
+  console.log("Слов в пустой строке: " + countWords(""));  // 0
+  console.log("Слов с пробелами по краям: " + countWords("   Hello   world  ")); // 2
 }
 
-// ==================== УРОВЕНЬ D — Реальные мини-проекты ====================
-
-// ---------- Задание 41. Электронный журнал колледжа ----------
-console.log("=== Задание 41 ===");
+// Задание 59. Генератор случайного пароля (учебный)
+console.log("--- Задание 59 ---");
 {
-  let students = [
-    {name: "Алия", score: 95},
-    {name: "Арман", score: 67},
-    {name: "Данияр", score: 82},
-    {name: "Мадина", score: 45}
-  ];
-
-  // 1. Имя и балл каждого студента
-  for (let i = 0; i < students.length; i++) {
-    console.log(students[i].name + ": " + students[i].score);
+  let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let password = "";
+  for (let i = 0; i < 8; i++) {
+    let index = Math.floor(Math.random() * characters.length);
+    password += characters[index];
   }
-
-  // 2. Студенты с баллами 50 и выше
-  console.log("Студенты с баллом 50 и выше:");
-  for (let i = 0; i < students.length; i++) {
-    if (students[i].score >= 50) {
-      console.log(students[i].name);
-    }
-  }
-
-  // 3. Студент с наивысшим баллом
-  let best = students[0];
-  for (let i = 1; i < students.length; i++) {
-    if (students[i].score > best.score) {
-      best = students[i];
-    }
-  }
-  console.log("Наивысший балл: " + best.name + " (" + best.score + ")");
-
-  // 4. Средний балл группы
-  let total = 0;
-  for (let i = 0; i < students.length; i++) {
-    total += students[i].score;
-  }
-  console.log("Средний балл группы: " + total / students.length);
-
-  // 5. Количество не сдавших экзамен (балл ниже 50)
-  let failed = 0;
-  for (let i = 0; i < students.length; i++) {
-    if (students[i].score < 50) {
-      failed++;
-    }
-  }
-  console.log("Не сдали экзамен: " + failed);
+  console.log("Пароль: " + password);
 }
 
-// ---------- Задание 42. Система бронирования мест ----------
-console.log("=== Задание 42 ===");
+// Задание 60. Конвертер валют
+console.log("--- Задание 60 ---");
 {
-  let seats = [false, true, false, false, true];
-  let selectedSeat = 3;
-
-  // true — место занято, false — свободно; нумерация с 1
-  if (!Number.isInteger(selectedSeat) || selectedSeat < 1 || selectedSeat > seats.length) {
-    console.log("Ошибка: неверный номер места");
-  } else if (seats[selectedSeat - 1] === false) {
-    seats[selectedSeat - 1] = true;
-    console.log("Место №" + selectedSeat + " успешно забронировано");
-  } else {
-    console.log("Место №" + selectedSeat + " уже занято");
+  function convertCurrency(amount, rate) {
+    if (amount < 0 || rate <= 0) {
+      return null;
+    }
+    return amount / rate;
   }
-  console.log(seats);
+  let tenge = 50000;
+  let rate = 500; // учебный курс
+  let usd = convertCurrency(tenge, rate);
+  console.log(tenge + " ₸ = " + usd.toFixed(2) + " USD"); // 100.00 USD
+  console.log("Некорректные данные: " + convertCurrency(-100, 500)); // null
 }
 
-// ---------- Задание 43. Учёт товаров на складе ----------
-console.log("=== Задание 43 ===");
-{
-  let products = [
-    {name: "Ноутбук", quantity: 5},
-    {name: "Мышь", quantity: 15},
-    {name: "Клавиатура", quantity: 3},
-    {name: "Монитор", quantity: 8}
-  ];
+// ===== Уровень D — Мини-проекты с HTML и JavaScript =====
+// (работают только в браузере)
+if (typeof document !== "undefined") {
 
-  // 1. Список всех товаров
-  console.log("Список товаров:");
-  for (let i = 0; i < products.length; i++) {
-    console.log(products[i].name + ": " + products[i].quantity + " шт.");
-  }
-
-  // 2. Товары, количество которых меньше 5
-  console.log("Товары, которых меньше 5:");
-  for (let i = 0; i < products.length; i++) {
-    if (products[i].quantity < 5) {
-      console.log(products[i].name + ": " + products[i].quantity + " шт.");
+  // Задание 61. Интерактивный счётчик
+  {
+    let count = 0;
+    let counterValue = document.getElementById("counterValue");
+    function showCount() {
+      counterValue.textContent = count;
     }
+    document.getElementById("plusBtn").addEventListener("click", function () {
+      count++;
+      showCount();
+    });
+    document.getElementById("minusBtn").addEventListener("click", function () {
+      count--;
+      showCount();
+    });
+    document.getElementById("resetBtn").addEventListener("click", function () {
+      count = 0;
+      showCount();
+    });
   }
 
-  // 3. Общее количество единиц
-  let totalQuantity = 0;
-  for (let i = 0; i < products.length; i++) {
-    totalQuantity += products[i].quantity;
-  }
-  console.log("Всего единиц товаров: " + totalQuantity);
-
-  // 4. Товар с максимальным количеством
-  let maxProduct = products[0];
-  for (let i = 1; i < products.length; i++) {
-    if (products[i].quantity > maxProduct.quantity) {
-      maxProduct = products[i];
-    }
-  }
-  console.log("Больше всего: " + maxProduct.name + " (" + maxProduct.quantity + " шт.)");
-
-  // 5. Добавление нового товара
-  products.push({name: "Принтер", quantity: 4});
-  console.log("Список после добавления товара:");
-  for (let i = 0; i < products.length; i++) {
-    console.log(products[i].name + ": " + products[i].quantity + " шт.");
-  }
-}
-
-// ---------- Задание 44. Учёт расходов ----------
-console.log("=== Задание 44 ===");
-{
-  let expenses = [2500, 1800, 4200, 1500, 3100, 2600, 5000];
-
-  let totalExpenses = 0;
-  let maxExpense = expenses[0];
-  let minExpense = expenses[0];
-  let daysOver = 0;
-
-  for (let i = 0; i < expenses.length; i++) {
-    totalExpenses += expenses[i];
-    if (expenses[i] > maxExpense) {
-      maxExpense = expenses[i];
-    }
-    if (expenses[i] < minExpense) {
-      minExpense = expenses[i];
-    }
-    if (expenses[i] > 3000) {
-      daysOver++;
-    }
-  }
-
-  console.log("Общая сумма расходов: " + totalExpenses + " ₸");
-  console.log("Максимальный расход: " + maxExpense + " ₸");
-  console.log("Минимальный расход: " + minExpense + " ₸");
-  console.log("Средний расход за день: " + (totalExpenses / expenses.length).toFixed(2) + " ₸");
-  console.log("Дней с расходами выше 3000 ₸: " + daysOver);
-}
-
-// ---------- Задание 45. Система регистрации участников ----------
-console.log("=== Задание 45 ===");
-{
-  let participants = [
-    {name: "Али", age: 17, registered: true},
-    {name: "Аружан", age: 16, registered: false},
-    {name: "Руслан", age: 19, registered: true}
-  ];
-
-  // Условие допуска: зарегистрирован и возраст от 16 до 25 включительно
-  function showAdmitted(list) {
-    let admitted = 0;
-    console.log("Допущенные участники:");
-    for (let i = 0; i < list.length; i++) {
-      let p = list[i];
-      if (p.registered && p.age >= 16 && p.age <= 25) {
-        console.log(p.name);
-        admitted++;
+  // Задание 62. Калькулятор индекса успеваемости
+  {
+    document.getElementById("calcBtn").addEventListener("click", function () {
+      let result = document.getElementById("gradeResult");
+      let ids = ["grade1", "grade2", "grade3"];
+      let sum = 0;
+      for (let i = 0; i < ids.length; i++) {
+        let raw = document.getElementById(ids[i]).value;
+        let value = Number(raw);
+        if (raw === "" || isNaN(value) || value < 0 || value > 100) {
+          result.textContent = "Ошибка: введите все три балла в диапазоне от 0 до 100";
+          return;
+        }
+        sum += value;
       }
-    }
-    console.log("Всего допущено: " + admitted);
+      let average = sum / ids.length;
+      let level;
+      if (average >= 90) {
+        level = "Отличная успеваемость";
+      } else if (average >= 70) {
+        level = "Хорошая успеваемость";
+      } else if (average >= 50) {
+        level = "Удовлетворительная успеваемость";
+      } else {
+        level = "Неудовлетворительная успеваемость";
+      }
+      result.textContent = "Средний балл: " + average.toFixed(2) + ". " + level;
+    });
   }
 
-  // Исходные данные
-  showAdmitted(participants);
+  // Задание 63. Список задач (To-Do List)
+  {
+    let taskInput = document.getElementById("taskInput");
+    let taskList = document.getElementById("taskList");
+    function addTask() {
+      let text = taskInput.value.trim();
+      if (text === "") {
+        alert("Введите текст задачи");
+        return;
+      }
+      let li = document.createElement("li");
+      let span = document.createElement("span");
+      span.textContent = text;
+      span.style.cursor = "pointer";
+      span.addEventListener("click", function () {
+        span.classList.toggle("done");
+      });
+      let del = document.createElement("button");
+      del.textContent = "Удалить";
+      del.addEventListener("click", function () {
+        li.remove();
+      });
+      li.appendChild(span);
+      li.appendChild(del);
+      taskList.appendChild(li);
+      taskInput.value = "";
+      taskInput.focus();
+    }
+    document.getElementById("addTaskBtn").addEventListener("click", addTask);
+    taskInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") addTask();
+    });
+  }
 
-  // Проверка на других значениях
-  console.log("--- Проверка на других значениях ---");
-  showAdmitted([
-    {name: "Тимур", age: 15, registered: true},    // слишком молод
-    {name: "Сабина", age: 16, registered: true},   // нижняя граница
-    {name: "Нурлан", age: 25, registered: true},   // верхняя граница
-    {name: "Айдос", age: 26, registered: true},    // слишком взрослый
-    {name: "Дана", age: 20, registered: false}     // не зарегистрирован
-  ]);
+  // Задание 64. Тестирование студентов
+  {
+    let questions = [
+      {
+        question: "Какое ключевое слово объявляет переменную, которую нельзя переприсвоить?",
+        options: ["var", "let", "const", "int"],
+        correct: 2
+      },
+      {
+        question: "Какой оператор сравнивает значение и тип без приведения?",
+        options: ["==", "===", "=", "!="],
+        correct: 1
+      },
+      {
+        question: "Какой метод добавляет элемент в конец массива?",
+        options: ["push()", "pop()", "shift()", "slice()"],
+        correct: 0
+      },
+      {
+        question: "Что вернёт typeof 42?",
+        options: ["\"string\"", "\"boolean\"", "\"number\"", "\"object\""],
+        correct: 2
+      },
+      {
+        question: "Какой цикл удобен, когда известно число повторений?",
+        options: ["for", "if", "switch", "return"],
+        correct: 0
+      }
+    ];
+    let current = 0;
+    let correctCount = 0;
+    let quiz = document.getElementById("quiz");
+
+    function showQuestion() {
+      if (current >= questions.length) {
+        let percent = correctCount / questions.length * 100;
+        quiz.innerHTML = "";
+        let p = document.createElement("p");
+        p.textContent = "Результат: " + correctCount + " из " + questions.length +
+          " (" + percent.toFixed(0) + "%)";
+        let again = document.createElement("button");
+        again.textContent = "Пройти заново";
+        again.addEventListener("click", function () {
+          current = 0;
+          correctCount = 0;
+          showQuestion();
+        });
+        quiz.appendChild(p);
+        quiz.appendChild(again);
+        return;
+      }
+      let q = questions[current];
+      quiz.innerHTML = "";
+      let title = document.createElement("p");
+      title.textContent = "Вопрос " + (current + 1) + " из " + questions.length + ": " + q.question;
+      quiz.appendChild(title);
+      q.options.forEach(function (option, index) {
+        let btn = document.createElement("button");
+        btn.textContent = option;
+        btn.addEventListener("click", function () {
+          if (index === q.correct) {
+            correctCount++;
+          }
+          current++;
+          showQuestion();
+        });
+        quiz.appendChild(btn);
+      });
+    }
+    showQuestion();
+  }
+
+  // Задание 65. Электронная система посещаемости
+  {
+    let group = ["Алия", "Руслан", "Мадина", "Арман", "Данияр"];
+    let list = document.getElementById("attendanceList");
+    let dateInput = document.getElementById("lessonDate");
+    dateInput.value = new Date().toISOString().slice(0, 10);
+
+    group.forEach(function (name, i) {
+      let label = document.createElement("label");
+      label.style.display = "block";
+      let cb = document.createElement("input");
+      cb.type = "checkbox";
+      cb.id = "student" + i;
+      label.appendChild(cb);
+      label.appendChild(document.createTextNode(" " + name + " — присутствует"));
+      list.appendChild(label);
+    });
+
+    document.getElementById("summaryBtn").addEventListener("click", function () {
+      let present = 0;
+      for (let i = 0; i < group.length; i++) {
+        if (document.getElementById("student" + i).checked) {
+          present++;
+        }
+      }
+      let absent = group.length - present;
+      let percent = present / group.length * 100;
+      document.getElementById("attendanceResult").textContent =
+        "Дата: " + (dateInput.value || "не указана") +
+        ". Присутствуют: " + present + ", отсутствуют: " + absent +
+        ", посещаемость: " + percent.toFixed(0) + "%";
+      try {
+        localStorage.setItem("attendance_" + dateInput.value, JSON.stringify({
+          present: present, absent: absent, percent: percent
+        }));
+      } catch (e) {
+        // localStorage может быть недоступен — результат всё равно показан
+      }
+    });
+  }
 }
-
 // ==================== ДОПОЛНИТЕЛЬНОЕ ЗАДАНИЕ ====================
 // Запускать в браузере через index.html (используются prompt() и alert())
 
